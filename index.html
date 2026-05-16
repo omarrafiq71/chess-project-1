@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Chess - Omar</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="setup();">
+
+<h2>My Chess Project</h2>
+  <p id="turnInfo">Player's turn: <b>White</b></p>
+  <div id="board"></div>
+
+
+<section id="board">
+
+    <!-- Promotion Overlay -->
+    <div class="overlay hidden" id="promotionMessage">
+        <div class="overlay-inner">
+
+            <span class="overlay-title">Promotion!</span>
+
+            <p class="overlay-text" id="alertText"></p>
+
+            <ul id="promotionList" class="white">
+
+                <li>
+                    <a href="#" 
+                       class="promotion-button queen"
+                       onclick="promote('queen'); return false;"
+                       aria-label="Promote to Queen">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       class="promotion-button castle"
+                       onclick="promote('castle'); return false;"
+                       aria-label="Promote to Rook">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       class="promotion-button bishop"
+                       onclick="promote('bishop'); return false;"
+                       aria-label="Promote to Bishop">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       class="promotion-button knight"
+                       onclick="promote('knight'); return false;"
+                       aria-label="Promote to Knight">
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+	<!-- Error Overlay -->
+	<div class="overlay hidden" id="errorMessage">
+
+		<div class="overlay-inner">
+
+			<span class="overlay-title">Error!</span>
+
+			<p class="overlay-text" id="errorText"></p>
+
+			<a href="#"
+			   class="overlay-button"
+			   onclick="closeError(); return false;">
+			   Close
+			</a>
+
+		</div>
+
+	</div>
+
+	<!-- End Game Overlay -->
+	<div class="overlay hidden" id="endMessage">
+
+		<div class="overlay-inner">
+
+			<span class="overlay-title">Game Over!</span>
+
+			<p class="overlay-text" id="endText"></p>
+
+			<a href="#"
+			   class="overlay-button"
+			   onclick="newGame(); return false;">
+			   New Game
+			</a>
+
+		</div>
+
+	</div>
+
+</section>
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
